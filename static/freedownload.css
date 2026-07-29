@@ -1,0 +1,256 @@
+@font-face {
+    font-family: GoogleSans;
+    src: url("./GoogleSans.ttf");
+}
+:root
+{
+    --ry1: red;
+    --ry2: rgb(255, 90, 0);
+    --ry3: rgb(255, 165, 0);
+    --ry4: yellow;
+    background-color: oklch(0 0 0);
+    color: oklch(1 0 0);
+}
+* {
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    font-family: GoogleSans, Arial, Helvetica, sans-serif;
+}
+
+
+.main-download
+{
+    background-color: oklch(40% 0 0);
+}
+.main-download h1 {
+    text-align: center;
+}
+.cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 40px;
+}
+.mainsong-panel
+{
+    margin-bottom: 40px;
+}
+.divider
+{
+    width: 50%;
+    height: 1.5px;
+    margin: 40px 0;
+    align-self: center;
+    border: 0;
+    background-color: #000;
+}
+#lossless-btn
+{
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+#lossless-btn button
+{
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: oklch(30% 0 0 / 80%);
+    color: oklch(1 0 0 / 90%);
+    animation: redyellow-border 0.75s infinite linear;
+}
+#lossless-btn button:hover
+{
+    border: 0;
+    color: oklch(30% 0 0 / 100%);
+    animation: redyellow-background 0.6s ease-in-out 0s infinite;
+}
+.lossless-notes
+{
+    text-align: left;
+    padding: 20px;
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: oklch(40% 0.03 0);
+}
+.lossless-notes li {
+    list-style: none;
+}
+.lossless-notes-title
+{
+    color: yellow;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.try-container
+{
+    border: 1px solid #000;
+}
+
+footer {
+    padding: 20px;
+    line-height: 25px;
+    letter-spacing: 0.6px;
+}
+.dl-table {
+    display: grid;
+    grid-template-columns: 25% 25% 50%;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "dlbox1 dlbox2 dlbox3"
+    "dlbox4 dlbox5 dlbox6"
+    "dlbox7 dlbox8 dlbox9"
+    ;
+}
+.dl-table > * {
+    border: 2px solid black;
+    border-right: 0;
+    border-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+.dl-table #dlbox7, #dlbox8, #dlbox9 {
+    border-bottom: 2px solid oklch(0 0 0);
+}
+.dl-table #dlbox3, #dlbox6, #dlbox9 {
+    border-right: 2px solid oklch(0 0 0);
+}
+.dl-header {
+    background-color: purple;
+}
+.dl-table h3
+{
+    font-size: 2.25rem;
+}
+.dl-table p {
+    font-size: if(
+        media(width >= 1024px): 2rem;
+        else: 1.25rem;
+    );
+}
+.dl-table a {
+    text-decoration: none;
+}
+.dl-table button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    padding: 5px;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+.dl-table button img {
+    padding-left: 5px;
+}
+.dl-table .flacbtn {
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid white;
+    color: rgb(0, 145, 255);
+    background-color: hsla(0, 0%, 25%, 50%);
+    box-shadow: 0 7px 0 rgba(0, 0, 255, 50%);
+}
+
+.dl-table .flacbtn:hover {
+    animation: def 0.3s forwards;
+}
+
+.dl-table .otherbtn {
+    border: 0;
+    border-radius: 5px;
+    background-color: rgba(13, 226, 13, 0.8);
+    color: oklch(1 0 0);
+}
+.otherbtn:hover {
+    background-color: rgb(37, 163, 37);
+}
+.otherbtn:active {
+    background-color: rgb(30, 108, 30);
+}
+.dl-table #dlbox9{
+    row-gap: 10px;
+}
+
+
+@keyframes def {
+    to {
+        border-color: blue;
+        box-shadow: 0 0 0;
+        background-color: blue;
+        color: white;
+    }
+}
+@keyframes redyellow-border {
+    from{
+        border-top: 2px solid var(--ry1);
+        border-right: 2px solid var(--ry2);
+        border-bottom: 2px solid var(--ry3);
+        border-left: 2px solid var(--ry4);
+    }
+    25% {
+        border-top: 2px solid var(--ry4);
+        border-right: 2px solid var(--ry1);
+        border-bottom: 2px solid var(--ry2);
+        border-left: 2px solid var(--ry3);
+    }
+    50% {
+        border-top: 2px solid var(--ry3);
+        border-right: 2px solid var(--ry4);
+        border-bottom: 2px solid var(--ry1);
+        border-left: 2px solid var(--ry2);
+    }
+    75% {
+        border-top: 2px solid var(--ry2);
+        border-right: 2px solid var(--ry3);
+        border-bottom: 2px solid var(--ry4);
+        border-left: 2px solid var(--ry1);
+    }
+    to {
+        border-top: 2px solid var(--ry1);
+        border-right: 2px solid var(--ry2);
+        border-bottom: 2px solid var(--ry3);
+        border-left: 2px solid var(--ry4);
+    }
+}
+@keyframes redyellow-background {
+    from { background: linear-gradient(to right, var(--ry1), var(--ry2), var(--ry3), var(--ry4)); }
+    25% { background: linear-gradient(to right, var(--ry4), var(--ry1), var(--ry2), var(--ry3)); }
+    50% { background: linear-gradient(to right, var(--ry3), var(--ry4), var(--ry1), var(--ry2)); }
+    75% { background: linear-gradient(to right, var(--ry2), var(--ry3), var(--ry4), var(--ry1)); }
+    to { background: linear-gradient(to right, var(--ry1), var(--ry2), var(--ry3), var(--ry4)); }
+}
+@media screen and (max-width: 767px) {
+    .cont{
+        padding: 30px 10px;
+    }
+    .main-download
+    {
+        align-items: center;
+        text-align: center;
+    }
+    .lossless-notes
+    {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .dl-table p
+    {
+        font-size: 1rem;
+    }
+    .dl-table h3 {
+        font-size: 1.17em;
+    }
+}

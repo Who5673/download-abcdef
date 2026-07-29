@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website frontend</title>
+    <link rel="stylesheet" type="text/css" href="static/markup.css">
+    <link rel="icon" type="image/png" href="static/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+const goback = () => {
+    document.getElementById("twofa-container")?.classList.add("go");
+    document.getElementById("passkey-container")?.classList.add("go");
+    document.getElementById("twofa-container")?.classList.remove("goback");
+    document.getElementById("passkey-container")?.classList.remove("goback");
+    let btn1_style = document.getElementById("btn1")?.style;
+    let btn2_style = document.getElementById("btn2")?.style;
+    if (btn1_style !== undefined && btn2_style !== undefined) {
+        btn1_style.visibility = btn2_style.visibility = "hidden";
+        setTimeout(function () {
+            btn1_style.visibility = "visible";
+            btn2_style.visibility = "hidden";
+        }, 750);
+    }
+};
+const go = () => {
+    document.getElementById("twofa-container")?.classList.remove("go");
+    document.getElementById("passkey-container")?.classList.remove("go");
+    document.getElementById("twofa-container")?.classList.add("goback");
+    document.getElementById("passkey-container")?.classList.add("goback");
+    let btn1_style = document.getElementById("btn1")?.style;
+    let btn2_style = document.getElementById("btn2")?.style;
+    if (btn1_style !== undefined && btn2_style !== undefined) {
+        btn1_style.visibility = btn2_style.visibility = "hidden";
+        setTimeout(function () {
+            btn1_style.visibility = "hidden";
+            btn2_style.visibility = "visible";
+        }, 750);
+    }
+};
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div id="twofa-container">
+            <h1 style="text-align: center">2FA (hay 2SV)</h1>
+            <p>Là hình thức xác thực đăng nhập bằng 2 yếu tố (two factors):</p>
+            <ol class="twofa-p">
+                <li>Mật khẩu người dùng;</li>
+                <li><b>Phương thức xác thực thứ hai bất kì (SMS OTP, ứng dụng xác thực bên thứ ba, khóa bảo mật,...)</b>;</li>
+            </ol>
+            <p style="color: rgb(255, 255, 0);">⚠️ Nếu mật khẩu bị rò rỉ thì vẫn còn lớp thứ hai để bảo vệ tài khoản.</p>
+            <p style="font-style: italic; font-size: 1.1rem;">
+                ℹ️ Chú thích:<br> 
+            - 2FA: two-factor authentication;<br>
+            - 2SV: two-step vertification;
+            </p>
+        </div>
+        <div id="passkey-container">
+            <h1 style="text-align: center;">Passwordless Login</h1>
+            <p>
+                ➡️ Passwordless login là hình thức <strong>đăng nhập không mật khẩu.</strong><br>
+                💡 Ta có thể bỏ mật khẩu và sử dụng lớp thứ hai của 2FA làm cách đăng nhập trực tiếp (ví dụ: tài khoản Microsoft, Google,...).
+            </p>
+            <p>👉 Phương thức đăng nhập không mật khẩu gồm:</p>
+            <ol class="twofa-p">
+                <li>Ứng dụng xác thực 2 lớp (ví dụ: Microsoft Authenticator, Authy,...);</li>
+                <li>Liên kết tài khoản ứng dụng khác (như Google, Apple, Facebook,...) để đăng nhập;</li>
+                <li>Sinh trắc học (trên điện thoại), PIN từ trình quản lí mật khẩu của trình duyệt (ví dụ: Edge)</li>
+                <li>Khóa bảo mật vật lí (<b>bảo mật cao nhất</b>);</li>
+                <span style="font-style: italic;">Những phương thức 3, 4 còn được gọi là khóa truy cập (Passkey).</span>
+            </ol>
+            <p style="color: rgb(255, 255, 0); font-weight: 900;">🚀 Passwordless login giúp chống lại cả hai phương pháp tấn công phổ biến là brute-force và phishing, tạo đóng góp rất quan trọng đến tương lai của bảo mật.</p>
+            <p style="color: rgb(255, 0, 0); font-weight: 900;">‼️ Lưu ý: Dù dùng 2FA hay passwordless login thì cũng đều cần phải có phương thức sign in bằng mã dự phòng để tránh mất quyền truy cập vào tài khoản.</p>
+        </div>
+    </div>
+    <div class="changebar">
+        <div class="img-container">
+            <button onclick="go();" id="btn1"><img src="/static/arrow-left.svg" alt="Arrow left"></button>
+            <button onclick="goback();" id="btn2"><img src="/static/arrow-right.svg" alt="Arrow right"></button>
+        </div>
+    </div>
+    <div id="cannot-header">
+        <h1>The display can only the displayed in the screen satisfying these conditions:<br>
+            Width >= 768px<br>
+            Height >= 900px</h1>
+        <h1 id="sad">🙁</h1>
+    </div>
+    <script type="module" src="static/frontend.js"></script>
+</body>
+</html>
+

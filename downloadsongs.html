@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free download</title>
+    <link rel="icon" type="image/svg" href="./static/abcdef-favicon.svg" sizes="512x512">
+    <link rel="stylesheet" type="text/css" href="./static/freedownload.css">
+</head>
+<body>
+    <main class="main-download cont">
+        <h1>Download ABCDEF song</h1>
+        <hr class="divider">
+        <div class="song-interacter">
+            <section class="mainsong-panel wav-song">
+                <div style="line-height: 30px;">
+                    <h2 id="lossless-download">Free LOSSLESS file download:</h2>
+                    <p>(1411 kbps, created via Audacity, WAV format)</p>
+                </div>
+                <div id="lossless-btn">
+                    <a href="./static/ABCDEF.wav" download="ABCDEF.wav"><button>Download LOSSLESS file</button></a>
+                </div>
+                <br>
+                <div class="lossless-notes">
+                    <h3 class="lossless-notes-title">⚠️ Note:</h3>
+                    <br>
+                    <ul style="text-align: left;">
+                        <li>LOSSLESS files take a large amount of disk space.</li>
+                        <div style="width: 100%; height: 5px;"></div>
+                        <li>This type of file requires a premium sound-output to compare with compressed songs.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="mainsong-panel more-download-options">
+                <h2 style="padding: 20px;">More download options:</h2>
+                <div class="dl-table">
+                    <div class="dl-box dl-header" style="grid-area: dlbox1" id="dlbox1"><h3>Filetype</h3></div>
+                    <div class="dl-box dl-header" style="grid-area: dlbox2" id="dlbox2"><h3>Bitrate (kbps)</h3></div>
+                    <div class="dl-box dl-header" style="grid-area: dlbox3" id="dlbox3"><h3>Download button(s)</h3></div>
+                    <div class="dl-box" style="grid-area: dlbox4" id="dlbox4">
+                        <p>FLAC</p>
+                    </div>
+                    <div class="dl-box" style="grid-area: dlbox5" id="dlbox5">
+                        <p>385</p>
+                    </div>
+                    <div class="dl-box" style="grid-area: dlbox6" id="dlbox6">
+                        <a href="./static/" download="ABCDEF.flac"><button class="dlbtn flacbtn">Download FLAC<img alt="" src="./static/download.svg"></button></a>
+                    </div>
+                    <div class="dl-box" style="grid-area: dlbox7" id="dlbox7">
+                        <p>MP3</p>
+                    </div>
+                    <div class="dl-box" style="grid-area: dlbox8" id="dlbox8">
+                        <p>Varies in [128; 320]</p>
+                    </div>
+                    <div class="dl-box" style="grid-area: dlbox9" id="dlbox9">
+                        <a href="./static/ABCDEF.mp3" download="ABCDEF.mp3"><button class="dlbtn otherbtn">Download 320kbps<br>(recommended) <img alt="" src="./static/download.svg"></button></a>
+                        <a href="./static/ABCDEF-256kbps.mp3" download="ABCDEF-256kbps.mp3"><button class="dlbtn otherbtn">Download 256kbps <img alt="" src="./static/download.svg"></button></a>
+                        <a href="./static/ABCDEF-192kbps.mp3" download="ABCDEF-192kbps.mp3"><button class="dlbtn otherbtn">Download 192kbps <img alt="" src="./static/download.svg"></button></a>
+                        <a href="./static/ABCDEF-128kbps.mp3" download="ABCDEF-128kbps.mp3"><button class="dlbtn otherbtn">Download 128kbps <img alt="" src="./static/download.svg"></button></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="try-container cont">
+        <h1>Listen to ABCDEF song on our website</h1>
+        <audio controls id="wav-trysong">
+            <source src="./static/ABCDEF.wav" type="audio/wav">
+            Your browser does not support 
+            <!--Neither WAV nor MP3 is not supported by your browser.-->
+        </audio>
+        <audio controls id="mp3-trysong">
+            <source src="./static/ABCDEF.mp3" type="audio/mp3">
+        </audio>
+    </div>
+    <footer>
+        Copyright &copy; <p id="dwnld-current-year"></p> Who5673. All rights served.<br>
+        License: MIT
+    </footer>
+    <script src="./static/frontend.js" type="module"></script>
+</body>
+</html>
