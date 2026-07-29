@@ -1,92 +1,84 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website frontend</title>
-    <link rel="stylesheet" type="text/css" href="static/markup.css">
-    <link rel="icon" type="image/png" href="static/favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script>
-const goback = () => {
-    document.getElementById("twofa-container")?.classList.add("go");
-    document.getElementById("passkey-container")?.classList.add("go");
-    document.getElementById("twofa-container")?.classList.remove("goback");
-    document.getElementById("passkey-container")?.classList.remove("goback");
-    let btn1_style = document.getElementById("btn1")?.style;
-    let btn2_style = document.getElementById("btn2")?.style;
-    if (btn1_style !== undefined && btn2_style !== undefined) {
-        btn1_style.visibility = btn2_style.visibility = "hidden";
-        setTimeout(function () {
-            btn1_style.visibility = "visible";
-            btn2_style.visibility = "hidden";
-        }, 750);
-    }
-};
-const go = () => {
-    document.getElementById("twofa-container")?.classList.remove("go");
-    document.getElementById("passkey-container")?.classList.remove("go");
-    document.getElementById("twofa-container")?.classList.add("goback");
-    document.getElementById("passkey-container")?.classList.add("goback");
-    let btn1_style = document.getElementById("btn1")?.style;
-    let btn2_style = document.getElementById("btn2")?.style;
-    if (btn1_style !== undefined && btn2_style !== undefined) {
-        btn1_style.visibility = btn2_style.visibility = "hidden";
-        setTimeout(function () {
-            btn1_style.visibility = "hidden";
-            btn2_style.visibility = "visible";
-        }, 750);
-    }
-};
-    </script>
+    <title>Free download</title>
+    <link rel="icon" type="image/svg" href="./static/abcdef-favicon.svg" sizes="512x512">
+    <link rel="stylesheet" type="text/css" href="./static/freedownload.css">
 </head>
 <body>
-    <div class="container">
-        <div id="twofa-container">
-            <h1 style="text-align: center">2FA (hay 2SV)</h1>
-            <p>Là hình thức xác thực đăng nhập bằng 2 yếu tố (two factors):</p>
-            <ol class="twofa-p">
-                <li>Mật khẩu người dùng;</li>
-                <li><b>Phương thức xác thực thứ hai bất kì (SMS OTP, ứng dụng xác thực bên thứ ba, khóa bảo mật,...)</b>;</li>
-            </ol>
-            <p style="color: rgb(255, 255, 0);">⚠️ Nếu mật khẩu bị rò rỉ thì vẫn còn lớp thứ hai để bảo vệ tài khoản.</p>
-            <p style="font-style: italic; font-size: 1.1rem;">
-                ℹ️ Chú thích:<br> 
-            - 2FA: two-factor authentication;<br>
-            - 2SV: two-step vertification;
-            </p>
+    <main class="main-download cont">
+        <h1>Download ABCDEF song</h1>
+        <hr class="divider">
+        <div class="song-interacter">
+            <section class="mainsong-panel wav-song">
+                <div style="line-height: 30px;">
+                    <h2 id="lossless-download">Free LOSSLESS file download:</h2>
+                    <p>(1411 kbps, created via Audacity, WAV format)</p>
+                </div>
+                <div id="lossless-btn">
+                    <a href="./static/ABCDEF.wav" download="ABCDEF.wav"><button>Download LOSSLESS file</button></a>
+                </div>
+                <br>
+                <div class="lossless-notes">
+                    <h3 class="lossless-notes-title">⚠️ Note:</h3>
+                    <br>
+                    <ul style="text-align: left;">
+                        <li>LOSSLESS files take a large amount of disk space.</li>
+                        <div style="width: 100%; height: 5px;"></div>
+                        <li>This type of file requires a premium sound-output to compare with compressed songs.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="mainsong-panel more-download-options">
+                <h2 style="padding: 20px;">More download options:</h2>
+                <div class="dl-table">
+                    <div class="dl-box dl-header" style="grid-area: dlbox1" id="dlbox1"><h3>Filetype</h3></div>
+                    <div class="dl-box dl-header" style="grid-area: dlbox2" id="dlbox2"><h3>Bitrate (kbps)</h3></div>
+                    <div class="dl-box dl-header" style="grid-area: dlbox3" id="dlbox3"><h3>Download button(s)</h3></div>
+                    <div class="dl-box" style="grid-area: dlbox4" id="dlbox4">
+                        <p>FLAC</p>
+                    </div>
+                    <div class="dl-box" style="grid-area: dlbox5" id="dlbox5">
+                        <p>385</p>
+                    </div>
+                    <div class="dl-box" style="grid-area: dlbox6" id="dlbox6">
+                        <a href="./static/" download="ABCDEF.flac"><button class="dlbtn flacbtn">Download FLAC<img alt="" src="./static/download.svg"></button></a>
+                    </div>
+                    <div class="dl-box" style="grid-area: dlbox7" id="dlbox7">
+                        <p>MP3</p>
+                    </div>
+                    <div class="dl-box" style="grid-area: dlbox8" id="dlbox8">
+                        <p>Varies in [128; 320]</p>
+                    </div>
+                    <div class="dl-box" style="grid-area: dlbox9" id="dlbox9">
+                        <a href="./static/ABCDEF.mp3" download="ABCDEF.mp3"><button class="dlbtn otherbtn">Download 320kbps<br>(recommended) <img alt="" src="./static/download.svg"></button></a>
+                        <a href="./static/ABCDEF-256kbps.mp3" download="ABCDEF-256kbps.mp3"><button class="dlbtn otherbtn">Download 256kbps <img alt="" src="./static/download.svg"></button></a>
+                        <a href="./static/ABCDEF-192kbps.mp3" download="ABCDEF-192kbps.mp3"><button class="dlbtn otherbtn">Download 192kbps <img alt="" src="./static/download.svg"></button></a>
+                        <a href="./static/ABCDEF-128kbps.mp3" download="ABCDEF-128kbps.mp3"><button class="dlbtn otherbtn">Download 128kbps <img alt="" src="./static/download.svg"></button></a>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div id="passkey-container">
-            <h1 style="text-align: center;">Passwordless Login</h1>
-            <p>
-                ➡️ Passwordless login là hình thức <strong>đăng nhập không mật khẩu.</strong><br>
-                💡 Ta có thể bỏ mật khẩu và sử dụng lớp thứ hai của 2FA làm cách đăng nhập trực tiếp (ví dụ: tài khoản Microsoft, Google,...).
-            </p>
-            <p>👉 Phương thức đăng nhập không mật khẩu gồm:</p>
-            <ol class="twofa-p">
-                <li>Ứng dụng xác thực 2 lớp (ví dụ: Microsoft Authenticator, Authy,...);</li>
-                <li>Liên kết tài khoản ứng dụng khác (như Google, Apple, Facebook,...) để đăng nhập;</li>
-                <li>Sinh trắc học (trên điện thoại), PIN từ trình quản lí mật khẩu của trình duyệt (ví dụ: Edge)</li>
-                <li>Khóa bảo mật vật lí (<b>bảo mật cao nhất</b>);</li>
-                <span style="font-style: italic;">Những phương thức 3, 4 còn được gọi là khóa truy cập (Passkey).</span>
-            </ol>
-            <p style="color: rgb(255, 255, 0); font-weight: 900;">🚀 Passwordless login giúp chống lại cả hai phương pháp tấn công phổ biến là brute-force và phishing, tạo đóng góp rất quan trọng đến tương lai của bảo mật.</p>
-            <p style="color: rgb(255, 0, 0); font-weight: 900;">‼️ Lưu ý: Dù dùng 2FA hay passwordless login thì cũng đều cần phải có phương thức sign in bằng mã dự phòng để tránh mất quyền truy cập vào tài khoản.</p>
-        </div>
+    </main>
+
+    <div class="try-container cont">
+        <h1>Listen to ABCDEF song on our website</h1>
+        <audio controls id="wav-trysong">
+            <source src="./static/ABCDEF.wav" type="audio/wav">
+            Your browser does not support 
+            <!--Neither WAV nor MP3 is not supported by your browser.-->
+        </audio>
+        <audio controls id="mp3-trysong">
+            <source src="./static/ABCDEF.mp3" type="audio/mp3">
+        </audio>
     </div>
-    <div class="changebar">
-        <div class="img-container">
-            <button onclick="go();" id="btn1"><img src="./static/arrow-left.svg" alt="Arrow left"></button>
-            <button onclick="goback();" id="btn2"><img src="./static/arrow-right.svg" alt="Arrow right"></button>
-        </div>
-    </div>
-    <div id="cannot-header">
-        <h1>The display can only the displayed in the screen satisfying these conditions:<br>
-            Width >= 768px<br>
-            Height >= 900px</h1>
-        <h1 id="sad">🙁</h1>
-    </div>
-    <script type="module" src="static/frontend.js"></script>
+    <footer>
+        Copyright &copy; <p id="dwnld-current-year"></p> Who5673. All rights served.<br>
+        License: MIT
+    </footer>
+    <script src="./static/frontend.js" type="module"></script>
 </body>
 </html>
-
