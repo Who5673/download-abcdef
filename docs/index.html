@@ -8,73 +8,120 @@
     <link rel="stylesheet" type="text/css" href="./static/freedownload.css">
 </head>
 <body>
-    <main class="main-download cont">
-        <h1>Download ABCDEF song</h1>
-        <hr class="divider">
-        <div class="song-interacter">
-            <section class="mainsong-panel wav-song">
-                <div style="line-height: 30px;">
-                    <h2 id="lossless-download">Free LOSSLESS file download:</h2>
-                    <p>(1411 kbps, created via Audacity, WAV format)</p>
-                </div>
-                <div id="lossless-btn">
-                    <a href="./static/ABCDEF.wav" download="ABCDEF.wav"><button>Download LOSSLESS file</button></a>
-                </div>
-                <br>
-                <div class="lossless-notes">
-                    <h3 class="lossless-notes-title">⚠️ Note:</h3>
+    <header></header>
+    <main>
+        <section class="main-download cont">
+            <h1>Download ABCDEF song</h1>
+            <hr class="divider">
+            <div class="song-interacter">
+                <section class="mainsong-panel wav-song">
+                    <div style="line-height: 30px;">
+                        <h2 id="lossless-download">Free LOSSLESS file download:</h2>
+                        <p>(1411 kbps, created via Audacity, WAV format)</p>
+                    </div>
+                    <div id="lossless-btn">
+                        <a href="./static/ABCDEF.wav" download="ABCDEF.wav"><button>Download LOSSLESS file</button></a>
+                    </div>
                     <br>
-                    <ul style="text-align: left;">
-                        <li>LOSSLESS files take a large amount of disk space.</li>
-                        <div style="width: 100%; height: 5px;"></div>
-                        <li>This type of file requires a premium sound-output to compare with compressed songs.</li>
-                    </ul>
-                </div>
-            </section>
+                    <div class="lossless-notes">
+                        <div>
+                            <h3 class="lossless-notes-title">⚠️ Note:</h3>
+                            <br>
+                            <ul style="text-align: left;">
+                                <li>LOSSLESS files take a large amount of disk space</li>
+                                <div style="width: 100%; height: 5px;"></div>
+                                <li>(approximately 0.176375 megabytes (not mebibytes) per second).</li>
+                                <div style="width: 100%; height: 5px;"></div>
+                                <li>They requires a premium sound-output to compare with compressed qualities.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-            <section class="mainsong-panel more-download-options">
-                <h2 style="padding: 20px;">More download options:</h2>
-                <div class="dl-table">
-                    <div class="dl-box dl-header" style="grid-area: dlbox1" id="dlbox1"><h3>Filetype</h3></div>
-                    <div class="dl-box dl-header" style="grid-area: dlbox2" id="dlbox2"><h3>Bitrate (kbps)</h3></div>
-                    <div class="dl-box dl-header" style="grid-area: dlbox3" id="dlbox3"><h3>Download button(s)</h3></div>
-                    <div class="dl-box" style="grid-area: dlbox4" id="dlbox4">
-                        <p>FLAC</p>
+                <section class="mainsong-panel more-download-options">
+                    <h2 style="padding: 20px;">More download options:</h2>
+                    <div class="dl-table">
+                        <div class="dl-box dl-header" style="grid-area: dlbox1" id="dlbox1"><h3>Filetype</h3></div>
+                        <div class="dl-box dl-header" style="grid-area: dlbox2" id="dlbox2"><h3>Bitrate (kbps)</h3></div>
+                        <div class="dl-box dl-header" style="grid-area: dlbox3" id="dlbox3"><h3>Download button(s)</h3></div>
+                        <div class="dl-box" style="grid-area: dlbox4" id="dlbox4">
+                            <p>FLAC</p>
+                        </div>
+                        <div class="dl-box" style="grid-area: dlbox5" id="dlbox5">
+                            <p>385</p>
+                        </div>
+                        <div class="dl-box" style="grid-area: dlbox6" id="dlbox6">
+                            <a href="./static/" download="ABCDEF.flac"><button class="dlbtn flacbtn">Download FLAC<img alt="" src="./static/download.svg"></button></a>
+                        </div>
+                        <div class="dl-box" style="grid-area: dlbox7" id="dlbox7">
+                            <p>MP3</p>
+                        </div>
+                        <div class="dl-box" style="grid-area: dlbox8" id="dlbox8">
+                            <p>Varies in [128; 320]</p>
+                        </div>
+                        <div class="dl-box" style="grid-area: dlbox9" id="dlbox9">
+                            <a href="./static/ABCDEF.mp3" download="ABCDEF.mp3"><button class="dlbtn otherbtn">Download 320kbps<br>(recommended) <img alt="" src="./static/download.svg"></button></a>
+                            <a href="./static/ABCDEF-256kbps.mp3" download="ABCDEF-256kbps.mp3"><button class="dlbtn otherbtn">Download 256kbps <img alt="" src="./static/download.svg"></button></a>
+                            <a href="./static/ABCDEF-192kbps.mp3" download="ABCDEF-192kbps.mp3"><button class="dlbtn otherbtn">Download 192kbps <img alt="" src="./static/download.svg"></button></a>
+                            <a href="./static/ABCDEF-128kbps.mp3" download="ABCDEF-128kbps.mp3"><button class="dlbtn otherbtn">Download 128kbps <img alt="" src="./static/download.svg"></button></a>
+                        </div>
                     </div>
-                    <div class="dl-box" style="grid-area: dlbox5" id="dlbox5">
-                        <p>385</p>
+                </section>
+            </div>
+        </section>
+
+        <section class="try-container cont">
+            <h1 style="text-align: center;">Listen to ABCDEF song on our website</h1>
+            <hr class="divider-light">
+            <audio id="trysong">
+                <source id="trysound" src="./static/ABCDEF.wav">
+                Your browser does not support the music's filetype.
+            </audio>
+            <div class="control-bar">
+                <div class="playpause gridbtns">
+                    <div class="play-container" style="grid-area: control-stack;" id="playbtn">
+                        <image src="./static/play.svg" width="40px" alt="play-button" title="Play"></image>
                     </div>
-                    <div class="dl-box" style="grid-area: dlbox6" id="dlbox6">
-                        <a href="./static/" download="ABCDEF.flac"><button class="dlbtn flacbtn">Download FLAC<img alt="" src="./static/download.svg"></button></a>
-                    </div>
-                    <div class="dl-box" style="grid-area: dlbox7" id="dlbox7">
-                        <p>MP3</p>
-                    </div>
-                    <div class="dl-box" style="grid-area: dlbox8" id="dlbox8">
-                        <p>Varies in [128; 320]</p>
-                    </div>
-                    <div class="dl-box" style="grid-area: dlbox9" id="dlbox9">
-                        <a href="./static/ABCDEF.mp3" download="ABCDEF.mp3"><button class="dlbtn otherbtn">Download 320kbps<br>(recommended) <img alt="" src="./static/download.svg"></button></a>
-                        <a href="./static/ABCDEF-256kbps.mp3" download="ABCDEF-256kbps.mp3"><button class="dlbtn otherbtn">Download 256kbps <img alt="" src="./static/download.svg"></button></a>
-                        <a href="./static/ABCDEF-192kbps.mp3" download="ABCDEF-192kbps.mp3"><button class="dlbtn otherbtn">Download 192kbps <img alt="" src="./static/download.svg"></button></a>
-                        <a href="./static/ABCDEF-128kbps.mp3" download="ABCDEF-128kbps.mp3"><button class="dlbtn otherbtn">Download 128kbps <img alt="" src="./static/download.svg"></button></a>
+                    <div class="pause-container" style="grid-area: control-stack;" id="pausebtn">
+                        <image src="./static/pause.svg" width="40px" alt="pause-button" title="Pause"></image>
                     </div>
                 </div>
-            </section>
-        </div>
+                <div class="repeat-control gridbtns">
+                    <div class="repeat-container" style="grid-area: control-stack;" id="repeatbtn">
+                        <image src="./static/repeat.svg" width="40px" alt="repeat-button" title="Repeat ABCDEF"></image>
+                    </div>
+                    <div class="norepeat-container" style="grid-area: control-stack;" id="norepeatbtn">
+                        <image src="./static/no-repeat.svg" width="40px" alt="norepeat-button" title="Cancel repeating ABCDEF"></image>
+                    </div>
+                </div>
+                <div class="dropdown-container">
+                    <div class="dropdown-resolution-menu">
+                        <div class="dropdown-btn">
+                            <p style="font-size: 1.25rem;">Sound quality</p>
+                            <img src="./static/chevron-down.svg" width="40">
+                        </div>
+                        <div class="dropdown-resolution">
+                            <ul>
+                                <li id="lossless-opt"><img src="./static/LOSSLESS.svg" alt=""><p>LOSSLESS (1411 kbps)</p></li>
+                                <li id="flac-opt"><img src="./static/FLAC-icon.svg" alt="">FLAC (385 kbps)</li>
+                                <li id="high-opt"><img src="./static/high-quality.svg" alt="">Lossy HQ (320 kbps)</li>
+                                <li id="medium-opt"><img src="./static/medium-quality.svg" alt="">Medium (256 kbps)</li>
+                                <li id="high-opt"><img src="./static/low-quality.svg" alt="">Lossy SQ (192 kbps)</li>
+                                <li id="datasave-opt">
+                                    <svg width="48" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" /></svg>
+                                    Data saver (128 kbps)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="status-bar">
+                <p id="dur">555</p>
+            </div>
+        </section>
     </main>
-
-    <div class="try-container cont">
-        <h1>Listen to ABCDEF song on our website</h1>
-        <audio controls id="wav-trysong">
-            <source src="./static/ABCDEF.wav" type="audio/wav">
-            Your browser does not support 
-            <!--Neither WAV nor MP3 is not supported by your browser.-->
-        </audio>
-        <audio controls id="mp3-trysong">
-            <source src="./static/ABCDEF.mp3" type="audio/mp3">
-        </audio>
-    </div>
     <footer>
         Copyright &copy; <p id="dwnld-current-year"></p> Who5673. All rights served.<br>
         License: MIT

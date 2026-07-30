@@ -17,9 +17,10 @@
     margin: 0;
     padding: 0;
     font-family: GoogleSans, Arial, Helvetica, sans-serif;
+    user-select: none;
 }
 
-
+/* Main download section - Download ABCDEF song */
 .main-download
 {
     background-color: oklch(40% 0 0);
@@ -35,6 +36,7 @@
 }
 .mainsong-panel
 {
+    width: 100%;
     margin-bottom: 40px;
 }
 .divider
@@ -45,6 +47,15 @@
     align-self: center;
     border: 0;
     background-color: #000;
+}
+.divider-light
+{
+    width: 50%;
+    height: 1.5px;
+    margin: 40px 0;
+    align-self: center;
+    border: 0;
+    background-color: oklch(1 0 0 / 1);
 }
 #lossless-btn
 {
@@ -80,6 +91,9 @@
     border-radius: 10px;
     background-color: oklch(40% 0.03 0);
 }
+.lossless-notes div {
+    width: 100%;
+}
 .lossless-notes li {
     list-style: none;
 }
@@ -89,16 +103,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.try-container
-{
-    border: 1px solid #000;
-}
-
-footer {
-    padding: 20px;
-    line-height: 25px;
-    letter-spacing: 0.6px;
-}
+/* More download options */
 .dl-table {
     display: grid;
     grid-template-columns: 25% 25% 50%;
@@ -185,6 +190,157 @@ footer {
 }
 
 
+/* Listen to ABCDEF song on our website */
+.try-container
+{
+    border: 1px solid #000;
+}
+
+footer {
+    padding: 50px 20px;
+    line-height: 25px;
+    letter-spacing: 0.6px;
+}
+/* Control bar */
+.control-bar{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+.gridbtns
+{
+    display: grid;
+    grid-template-areas: "control-stack";
+}
+#playbtn, #pausebtn, #repeatbtn, #norepeatbtn
+{
+    cursor: pointer;
+}
+#playbtn { 
+    z-index: 3;
+}
+#pausebtn
+{
+    display: none;
+}
+#playbtn.playing{ display: none; }
+#pausebtn.playing{ display: block; }
+
+#repeatbtn { z-index: 3;}
+#norepeatbtn
+{
+    display: none;
+}
+#repeatbtn.on{ display: none; }
+#norepeatbtn.on{ display: block; }
+
+/* Dropdown resolution */
+.dropdown-resolution-menu
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.dropdown-btn{
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.dropdown-resolution
+{
+    position: absolute;
+    top: 52px;
+    overflow-y: auto;
+    height: 148px; /* 74px each box (height) */
+    scrollbar-width: none;
+    display: none;
+}
+.dropdown-resolution-menu:hover .dropdown-resolution
+{
+    display: block;
+}
+.dropdown-resolution:hover
+{
+    display: block;
+}
+.dropdown-resolution ul
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.dropdown-resolution li
+{
+    background-color: black;
+    z-index: 5;
+    list-style: none;
+    width: 275px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: sans-serif, Arial, Helvetica, GoogleSans;
+    border: 1px solid;
+    padding: 12px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+#lossless-opt {
+    font-weight: 900;
+}
+#lossless-opt:hover{
+
+    animation: animate-violent 0.25s linear 0s forwards;
+}
+#lossless-opt:hover p{
+    background: linear-gradient(to right, lightgreen, rgb(0, 255, 191));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#flac-opt:hover {
+    animation: animate-flacblue 0.25s linear 0s forwards;
+    border-color: oklch(1 0 0);
+    color: oklch(0 0 0);
+}
+#high-opt:hover {
+    animation: animate-green 0.25s linear 0s forwards;
+}
+
+/* Status bar */
+.status-bar{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+/* Animate background colors */
+@keyframes animate-violent {
+    to {
+        background-color: rgb(255, 0, 255);
+    }
+}
+
+@keyframes animate-flacblue {
+    to {
+        background-color: rgb(0, 195, 255);
+    }
+}
+@keyframes animate-green {
+    to {
+        background-color: rgb(1, 167, 1);
+    }
+}
+
+
+/* Other anymations */
 @keyframes def {
     to {
         border-color: blue;
@@ -232,7 +388,14 @@ footer {
     75% { background: linear-gradient(to right, var(--ry2), var(--ry3), var(--ry4), var(--ry1)); }
     to { background: linear-gradient(to right, var(--ry1), var(--ry2), var(--ry3), var(--ry4)); }
 }
+
+
+/* Media queries */
 @media screen and (max-width: 767px) {
+    .mainsong-panel
+    {
+        width: 100svw;
+    }
     .cont{
         padding: 30px 10px;
     }
@@ -252,5 +415,29 @@ footer {
     }
     .dl-table h3 {
         font-size: 1.17em;
+    }
+    .dropdown-resolution{
+        height: 100px;
+    }
+}
+@media (max-width: 699px) {
+    .dropdown-resolution li {
+        font-size: 0.85em;
+        padding: 5px;
+        width: 100%;
+    }
+    #lossless-opt {
+        font-weight: normal;
+    }
+
+
+}
+
+@media (max-width: 1023px) {
+    .dropdown-btn:hover, .dropdown-btn:active {
+        background-color: oklch(50% 0 0);
+    }
+    .dropdown-resolution.show {
+        display: block;
     }
 }
