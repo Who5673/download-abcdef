@@ -73,25 +73,27 @@
         <section class="try-container cont">
             <h1 style="text-align: center;">Listen to ABCDEF song on our website</h1>
             <hr class="divider-light">
-            <audio id="trysong">
-                <source id="trysound" src="./static/ABCDEF.wav">
+            <audio id="trysong" src="./static/ABCDEF.wav">
                 Your browser does not support the music's filetype.
             </audio>
             <div class="control-bar">
                 <div class="playpause gridbtns">
                     <div class="play-container" style="grid-area: control-stack;" id="playbtn">
-                        <image src="./static/play.svg" width="40px" alt="play-button" title="Play"></image>
+                        <image src="./static/play.svg" width="40px" alt="play" title="Play"></image>
                     </div>
                     <div class="pause-container" style="grid-area: control-stack;" id="pausebtn">
-                        <image src="./static/pause.svg" width="40px" alt="pause-button" title="Pause"></image>
+                        <image src="./static/pause.svg" width="40px" alt="pause" title="Pause"></image>
                     </div>
+                </div>
+                <div class="rewind-container">
+                    <img src="./static/rewind.svg" alt="Rewind" width="40px" id="rewindbtn" title="Rewind song">
                 </div>
                 <div class="repeat-control gridbtns">
                     <div class="repeat-container" style="grid-area: control-stack;" id="repeatbtn">
-                        <image src="./static/repeat.svg" width="40px" alt="repeat-button" title="Repeat ABCDEF"></image>
+                        <image src="./static/repeat.svg" width="40px" alt="repeat" title="Repeat ABCDEF"></image>
                     </div>
                     <div class="norepeat-container" style="grid-area: control-stack;" id="norepeatbtn">
-                        <image src="./static/no-repeat.svg" width="40px" alt="norepeat-button" title="Cancel repeating ABCDEF"></image>
+                        <image src="./static/no-repeat.svg" width="40px" alt="unrepeat" title="Cancel repeating ABCDEF"></image>
                     </div>
                 </div>
                 <div class="dropdown-container">
@@ -106,7 +108,7 @@
                                 <li id="flac-opt"><img src="./static/FLAC-icon.svg" alt="">FLAC (385 kbps)</li>
                                 <li id="high-opt"><img src="./static/high-quality.svg" alt="">Lossy HQ (320 kbps)</li>
                                 <li id="medium-opt"><img src="./static/medium-quality.svg" alt="">Medium (256 kbps)</li>
-                                <li id="high-opt"><img src="./static/low-quality.svg" alt="">Lossy SQ (192 kbps)</li>
+                                <li id="low-opt"><img src="./static/low-quality.svg" alt=""><p>Lossy SQ (192 kbps)</p></li>
                                 <li id="datasave-opt">
                                     <svg width="48" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" /></svg>
                                     Data saver (128 kbps)
@@ -118,7 +120,7 @@
             </div>
 
             <div class="status-bar">
-                <p id="dur">555</p>
+                <p id="dur"></p>
             </div>
         </section>
     </main>

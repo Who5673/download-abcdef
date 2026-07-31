@@ -17,6 +17,9 @@
     margin: 0;
     padding: 0;
     font-family: GoogleSans, Arial, Helvetica, sans-serif;
+    /*user-select: none;*/
+}
+img, button {
     user-select: none;
 }
 
@@ -27,6 +30,7 @@
 }
 .main-download h1 {
     text-align: center;
+    width: 100%;
 }
 .cont {
     display: flex;
@@ -59,7 +63,7 @@
 }
 #lossless-btn
 {
-    width: 100vw;
+    width: 100%;
     height: 100px;
     display: flex;
     justify-content: center;
@@ -139,10 +143,7 @@
     font-size: 2.25rem;
 }
 .dl-table p {
-    font-size: if(
-        media(width >= 1024px): 2rem;
-        else: 1.25rem;
-    );
+    font-size: 2rem;
 }
 .dl-table a {
     text-decoration: none;
@@ -231,8 +232,20 @@ footer {
 {
     display: none;
 }
+
 #repeatbtn.on{ display: none; }
 #norepeatbtn.on{ display: block; }
+
+#rewindbtn {
+    cursor: pointer;
+    border-radius: 5px;
+}
+#rewindbtn:hover {
+    background-color: oklch(50% 0 0);
+}
+#rewindbtn:active {
+    background-color: oklch(75% 0 0);
+}
 
 /* Dropdown resolution */
 .dropdown-resolution-menu
@@ -280,6 +293,7 @@ footer {
 .dropdown-resolution li
 {
     background-color: black;
+    border-radius: 15px;
     z-index: 5;
     list-style: none;
     width: 275px;
@@ -291,12 +305,12 @@ footer {
     padding: 12px;
     font-size: 1.1em;
     cursor: pointer;
+    user-select: none;
 }
 #lossless-opt {
     font-weight: 900;
 }
 #lossless-opt:hover{
-
     animation: animate-violent 0.25s linear 0s forwards;
 }
 #lossless-opt:hover p{
@@ -305,14 +319,26 @@ footer {
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
+#flac-opt
+{
+    font-weight: 600;
+}
 #flac-opt:hover {
     animation: animate-flacblue 0.25s linear 0s forwards;
     border-color: oklch(1 0 0);
-    color: oklch(0 0 0);
 }
 #high-opt:hover {
     animation: animate-green 0.25s linear 0s forwards;
+}
+#medium-opt:hover {
+    animation: animate-yellow 0.25s linear 0s forwards;
+}
+#low-opt:hover
+{
+    animation: animate-red 0.25s linear 0s forwards;
+}
+#datasave-opt:hover{
+    animation: animate-saver 0.25s linear 0s forwards;
 }
 
 /* Status bar */
@@ -331,6 +357,7 @@ footer {
 @keyframes animate-flacblue {
     to {
         background-color: rgb(0, 195, 255);
+        color: #000;
     }
 }
 @keyframes animate-green {
@@ -338,7 +365,22 @@ footer {
         background-color: rgb(1, 167, 1);
     }
 }
-
+@keyframes animate-yellow {
+    to{
+        background-color: rgb(167, 157, 16);
+    }
+}
+@keyframes animate-red {
+    to{
+        background-color: rgb(134, 27, 27);
+    }
+}
+@keyframes animate-saver
+{
+    to{
+        background-color: oklch(50% 0 0);
+    }
+}
 
 /* Other anymations */
 @keyframes def {
@@ -391,7 +433,8 @@ footer {
 
 
 /* Media queries */
-@media screen and (max-width: 767px) {
+/* Phone: width < 768px */
+@media screen and (max-width: 768px) {
     .mainsong-panel
     {
         width: 100svw;
@@ -420,7 +463,8 @@ footer {
         height: 100px;
     }
 }
-@media (max-width: 699px) {
+
+@media screen and (max-width: 699px) {
     .dropdown-resolution li {
         font-size: 0.85em;
         padding: 5px;
@@ -430,14 +474,19 @@ footer {
         font-weight: normal;
     }
 
-
 }
 
-@media (max-width: 1023px) {
+@media screen and (any-pointer: coarse) and (hover: none)
+and (not (any-pointer: fine))
+/* Check if the user use touch screen or mouse screen */
+{
     .dropdown-btn:hover, .dropdown-btn:active {
         background-color: oklch(50% 0 0);
     }
     .dropdown-resolution.show {
         display: block;
+    }
+    .dl-table p {
+        font-size: 1.25rem;
     }
 }
